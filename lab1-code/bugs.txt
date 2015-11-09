@@ -1,0 +1,11 @@
+##vulnerablity1
+location: file parse.c
+method: getToken()
+description:
+No edge checking for the array s, only some weak patten recognization of
+char ' ' and '\r\n'. When a long buffer with no end of ' ' or '\r\n', it will
+constantly read the buffer.
+It's easy to cause Buffer OverFlow.
+Once the Buffer overwrite the RET, but no 'fd'(the first args,
+overwriting 'fd' will lead to exception handled), it'll lead to serious
+result.
